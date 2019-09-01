@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ReactPlayGround/static/css/main.637b16f1.chunk.css",
+    "main.js": "/ReactPlayGround/static/js/main.4a432ead.chunk.js",
+    "main.js.map": "/ReactPlayGround/static/js/main.4a432ead.chunk.js.map",
+    "runtime~main.js": "/ReactPlayGround/static/js/runtime~main.85bf3194.js",
+    "runtime~main.js.map": "/ReactPlayGround/static/js/runtime~main.85bf3194.js.map",
+    "static/js/2.9e8edf29.chunk.js": "/ReactPlayGround/static/js/2.9e8edf29.chunk.js",
+    "static/js/2.9e8edf29.chunk.js.map": "/ReactPlayGround/static/js/2.9e8edf29.chunk.js.map",
+    "index.html": "/ReactPlayGround/index.html",
+    "precache-manifest.f08fe4fc39e967cce92a1a8345018e02.js": "/ReactPlayGround/precache-manifest.f08fe4fc39e967cce92a1a8345018e02.js",
+    "service-worker.js": "/ReactPlayGround/service-worker.js",
+    "static/css/main.637b16f1.chunk.css.map": "/ReactPlayGround/static/css/main.637b16f1.chunk.css.map"
+  }
+}
