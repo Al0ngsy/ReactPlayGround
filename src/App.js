@@ -1,5 +1,5 @@
 // use are Hook Stuff
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 // Router
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 // Button
@@ -16,6 +16,16 @@ export default function App() {
         <div>
             <Router>
                 {/** Link to Sites */}
+                <Link to="/ReactPlayGround" style={{ textDecoration: 'none' }}>
+                    <Button
+                        style={{ margin: 20 }}
+                        variant="contained"
+                        margin="normal"
+                        color="primary">
+                        Home
+                    </Button>
+                </Link>
+
                 <Link to="/ReactPlayGround/Person" style={{ textDecoration: 'none' }}>
                     <Button
                         style={{ margin: 20 }}
@@ -42,10 +52,10 @@ export default function App() {
                     path: is how the url match the link above
                     exact: only render top folder
                 */}
-                <Switch>  
+                <Switch>
                     <Route path="/ReactPlayGround/Person" component={AppPerson} />
                     <Route path="/ReactPlayGround/Test" component={AppTest} />
-                    <Route component={Main} />
+                    <Route path="/ReactPlayGround/" component={Main} />
                 </Switch>
 
             </Router>

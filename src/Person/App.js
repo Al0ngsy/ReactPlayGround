@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { Person } from "./Person"
+import PropTypes from 'prop-types'
+// Storage
+import localStorage from 'local-storage';
+// Redux
+import { connect } from 'react-redux';
 
+// @Material-UI
 // Table
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -17,18 +23,15 @@ import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 // Box
 import Box from '@material-ui/core/Box';
-// Storage
-import localStorage from 'local-storage';
 
 class App extends Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
 			fullName: "",
 			age: null,
 			saving: null,
 			item: null,
-			visited: 0,
 			persons: []
 		}
 		this.handleChange = this.handleChange.bind(this)
@@ -70,25 +73,8 @@ class App extends Component {
 			}
 		}
 
-		let visited = localStorage.get("visitCount")
-
-		if (visited !== null) {
-			visited = parseInt(visited) + 1
-			this.setState(state => {
-				return {
-					visited
-				}
-			})
-			localStorage.set("visitCount", visited)
-		} else {
-			visited = 1
-			this.setState(state => {
-				return {
-					visited
-				}
-			})
-			localStorage.set("visitCount", visited)
-		}
+		// dispatch request to change value from store
+		this.props.increase()
 	}
 
 	handleChange(event) {
@@ -357,11 +343,23 @@ class App extends Component {
 					borderRadius={16}
 					zIndex="modal"
 				>
-					{this.state.visited}
+					{this.props.count}
 				</Box>
 			</div>
 		)
 	}
 }
 
-export default App;
+App.propTypes = {
+	count: PropTypes.number
+}
+
+const mapStateToProps = store => ({
+	count: store.count
+})
+
+const mapDispatchToProps = dispatch => ({
+	increase: (e) => dispatch({ type: 'INCREMENT' })
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
