@@ -1,7 +1,7 @@
 // use are Hook Stuff
 import React from 'react'
 // Router
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Route, Link, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom'
 // Button
 import Button from '@material-ui/core/Button';
 
@@ -55,7 +55,8 @@ export default function App() {
                 <Switch>
                     <Route path="/ReactPlayGround/Person" component={AppPerson} />
                     <Route path="/ReactPlayGround/Test" component={AppTest} />
-                    <Route path="/ReactPlayGround/" component={Main} />
+                    <Route path="/ReactPlayGround" component={Main} />
+                    <Route render={() => <Redirect to="/ReactPlayGround"/> } />
                 </Switch>
 
             </Router>
